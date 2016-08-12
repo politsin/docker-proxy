@@ -1,12 +1,12 @@
-nginx-proxy :
+docker-proxy :
  image: nginx:alpine
- container_name: nginx-proxy
- hostname: nginx-proxy
+ container_name: docker-proxy
+ hostname: docker-proxy
  restart: always
  ports:
   - "80:80"
+  - "443:443"
  volumes:
-  - "/opt/nginx-proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
-  - "/opt/nginx-proxy/.passwd:/etc/nginx/.passwd:ro"
-  - "/opt/nginx-proxy/ssl:/etc/nginx/ssl:ro"
-  - "/opt/nginx-proxy/www:/var/www:ro"
+  - "/opt/docker-proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
+  - "/opt/docker-proxy/vhosts:/etc/nginx/vhosts:ro"
+  - "/opt/docker-proxy/www:/var/www:ro"
