@@ -1,0 +1,12 @@
+nginx-proxy :
+ image: nginx:alpine
+ container_name: nginx-proxy
+ hostname: nginx-proxy
+ restart: always
+ ports:
+  - "80:80"
+ volumes:
+  - "/opt/nginx-proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
+  - "/opt/nginx-proxy/.passwd:/etc/nginx/.passwd:ro"
+  - "/opt/nginx-proxy/ssl:/etc/nginx/ssl:ro"
+  - "/opt/nginx-proxy/www:/var/www:ro"
