@@ -1,2 +1,2 @@
 # Git ignore vhosts
-vhosts/*
+vhosts/*/*
