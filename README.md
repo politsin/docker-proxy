@@ -1,7 +1,13 @@
 # docker-proxy
 ##
 cd /opt/docker-proxy
+
 docker-compose up -d docker-proxy
+
+git clone https://github.com/politsin/docker-proxy /opt/docker-proxy/
+
+/opt/docker-proxy/run.pl
+
 ##
 docker run --name docker-proxy -p 80:80 --rm -ti \
            -v /opt/nginx-proxy/nginx.conf:/etc/nginx/nginx.conf \
