@@ -6,7 +6,7 @@ docker-compose up -d docker-proxy
 
 git clone https://github.com/politsin/docker-proxy /opt/docker-proxy/
 
-/opt/docker-proxy/run.pl
+ * /opt/docker-proxy/run.pl
 
 ##
 docker run --name docker-proxy -p 80:80 --rm -ti \
