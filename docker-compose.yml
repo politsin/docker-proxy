@@ -1,5 +1,5 @@
 docker-proxy :
- image: nginx:alpine
+ image: ilari/alpine-nginx-pagespeed
  container_name: docker-proxy
  hostname: docker-proxy
  restart: always
