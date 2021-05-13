@@ -1,8 +1,17 @@
+### PageSpeed cache storage: files|redis|memcached (default: files)
+# NGINX_PAGESPEED_STORAGE=files
+# SEE: https://hub.docker.com/r/crunchgeek/nginx-pagespeed
 docker-proxy:
-  image: synst/nginx
+  image: crunchgeek/nginx-pagespeed
   container_name: docker-proxy
   hostname: docker-proxy
   restart: always
+  environment:
+    NGINX_GEOIP: 'off'
+    NGINX_PAGESPEED: 'on'
+    NGINX_PAGESPEED_JS: 'on'
+    NGINX_PAGESPEED_CSS: 'on'
+    NGINX_PAGESPEED_IMG: 'on'
   ports:
     - "80:80"
     - "443:443"
@@ -12,5 +21,4 @@ docker-proxy:
     - "/opt/docker-proxy/default:/etc/nginx/default:ro"
     - "/opt/docker-proxy/vhosts:/etc/nginx/vhosts:ro"
     - "/opt/docker-proxy/default/www:/var/www/html:ro"
-    - "/var/cache/munin/www:/var/www/munin:ro"
     - "/opt/sites:/opt/sites:rw"
