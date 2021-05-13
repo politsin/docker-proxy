@@ -1,16 +1,16 @@
 docker-proxy:
- image: synst/nginx
- container_name: docker-proxy
- hostname: docker-proxy
- restart: always
- ports:
-  - "80:80"
-  - "443:443"
- volumes:
-  - "/opt/docker-proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
-  - "/opt/docker-proxy/includes:/etc/nginx/includes:ro"
-  - "/opt/docker-proxy/default:/etc/nginx/default:ro"
-  - "/opt/docker-proxy/vhosts:/etc/nginx/vhosts:ro"
-  - "/opt/docker-proxy/default/www:/var/www/html:ro"
-  - "/var/cache/munin/www:/var/www/munin:ro"
-  - "/opt/sites:/opt/sites:rw"
+  image: synst/nginx
+  container_name: docker-proxy
+  hostname: docker-proxy
+  restart: always
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - "/opt/docker-proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
+    - "/opt/docker-proxy/includes:/etc/nginx/includes:ro"
+    - "/opt/docker-proxy/default:/etc/nginx/default:ro"
+    - "/opt/docker-proxy/vhosts:/etc/nginx/vhosts:ro"
+    - "/opt/docker-proxy/default/www:/var/www/html:ro"
+    - "/var/cache/munin/www:/var/www/munin:ro"
+    - "/opt/sites:/opt/sites:rw"
