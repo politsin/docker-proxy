@@ -1,7 +1,7 @@
 version: "3"
 services:
   docker-proxy:
-    image: nginx:1.24.0-alpine
+    image: nginx:alpine
     container_name: docker-proxy
     hostname: docker-proxy
     restart: always
